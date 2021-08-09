@@ -1,0 +1,16 @@
+<div class="container text-center">
+  <p class="display-1">GAME ON!</p>
+  <% @letters.each do |letter| %>
+    <a class="btn btn-primary btn-lg"><%= letter %></a>
+  <% end %>
+  <form action="/score" class="row row-cols-lg-12 mt-3 align-items-center" method="post">
+    <div class="col-10 px-1">
+      <input type="text" name="word" placeholder="Choose characters!" id="word-input" class="form-control">
+    </div>
+    <div class="col-2 px-1">
+      <input type="submit" value="Play!" class="form-control">
+    </div>
+    <input type="hidden" id="grid_chars" name="grid" value="<%= @letters.join(',') %>">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  </form>
+</div>
