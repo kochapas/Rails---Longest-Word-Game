@@ -3,5 +3,7 @@
   <div class="row"><h2 class="px-0">GRID: <%= params[:grid] %></h2></div>
   <div class="row"><h2 class="px-0">Attemp: <%= params[:word] %></h2></div>
   <div class="row"><h3 class="px-0">Scores: <%= @result[:score] %></h3></div>
-  <div class="row"><a href="/new" class="btn btn-primary">Play Again</a></div>
+  <%= link_to new_path do %>
+    <div class="row"><button class="btn btn-primary text-white">Play Again</a></div>
+  <% end %>
 </div>
